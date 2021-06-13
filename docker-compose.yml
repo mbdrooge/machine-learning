@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  machinelearning:
+    image: anaconda_img
+    container_name: anaconda
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports: 
+      - 8888:8888
+    volumes: 
+      - ./notebooks:/home/nonroot/notebooks/src:rw
